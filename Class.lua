@@ -1,5 +1,6 @@
 -- Lelance @ Sun. 14 Feb. 2021
 -- Script: Class function - make OOP easy.
+-- Inspiration from JavaScript's Class method.
 local function Class(preset: table)
 	local Proxy = newproxy(true)
 	local Meta = getmetatable(Proxy)
