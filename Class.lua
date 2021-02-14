@@ -1,7 +1,7 @@
 -- Lelance @ Sun. 14 Feb. 2021
 -- Script: Class function - make OOP easy.
 -- Inspiration from JavaScript's Class method.
-local function Class(preset: table)
+local function Class(preset: table, callfunc)
 	local Proxy = newproxy(true)
 	local Meta = getmetatable(Proxy)
 	Meta.__len = function()
@@ -13,8 +13,8 @@ local function Class(preset: table)
 			local func
 			if (typeof(preset[1]) == 'function') then
 				func = preset[1]
-			elseif (typeof(preset[2]) == 'function') then
-				func = preset[2]
+			elseif (typeof(callfunc) == 'function') then
+				func = callfunc
 			else
 				func = function(self)
 					return self
