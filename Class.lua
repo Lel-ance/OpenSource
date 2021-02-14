@@ -11,9 +11,7 @@ local function Class(preset: table, callfunc)
 		function class:new(...)
 			local newClass = class
 			local func
-			if (typeof(preset[1]) == 'function') then
-				func = preset[1]
-			elseif (typeof(callfunc) == 'function') then
+			if (typeof(callfunc) == 'function') then
 				func = callfunc
 			else
 				func = function(self)
