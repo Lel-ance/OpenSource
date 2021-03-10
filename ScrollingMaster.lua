@@ -36,7 +36,7 @@ function ScrollingMaster:SetupConnections(SF)
 	
 	local function refresh()
 		local ABSCS = Grid_Or_List.AbsoluteContentSize
-		SF.CanvasSize = UDim2.fromScale(0, 0, 0, math.ceil(ABSCS.Y))
+		SF.CanvasSize = UDim2.new(0, 0, 0, math.ceil(ABSCS.Y))
 	end
 	
 	refresh()
