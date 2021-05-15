@@ -35,7 +35,7 @@ function RateLimit:new(Name, Cooldown, refreshWhenCalled)
 	return Created
 end
 
-function RateLimit:add(Player)
+function RateLimit.Class:add(Player)
 	assert(self._name, MESSAGES.ASSERTION_ERROR:format(("[:add] Expected the method to be used on a RateLimit class, got direct call")))
 	assert(Player, MESSAGES.ASSERTION_ERROR:format(("[:add] Expected a player to be passed, got nil")))
 	
@@ -57,14 +57,14 @@ function RateLimit:add(Player)
 	return false
 end
 
-function RateLimit:remove(Player)
+function RateLimit.Class:remove(Player)
 	assert(self._name, MESSAGES.ASSERTION_ERROR:format(("[:remove] Expected the method to be used on a RateLimit class, got direct call")))
 	assert(Player, MESSAGES.ASSERTION_ERROR:format(("[:remove] Expected a player to be passed, got nil")))
 	pcall(function() self._stored[Player] = nil  end)
 end
 
-function RateLimit:New(...) return self:new(...) end
-function RateLimit:Add(...) return self:add(...) end
-function RateLimit:Remove(...) return self:remove(...) end
+function RateLimit.Class:New(...) return self:new(...) end
+function RateLimit.Class:Add(...) return self:add(...) end
+function RateLimit.Class:Remove(...) return self:remove(...) end
 
 return RateLimit
