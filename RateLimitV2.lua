@@ -40,7 +40,7 @@ function RateLimit:add(Player)
 	assert(Player, MESSAGES.ASSERTION_ERROR:format(("[:add] Expected a player to be passed, got nil")))
 	
 	if not self._stored[Player] then
-		self._stored[Player] = 0
+		self._stored[Player] = tick()
 		return false
 	end
 	local CompareTime, CurrentTime = self._stored[Player], tick()
