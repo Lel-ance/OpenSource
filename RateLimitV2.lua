@@ -63,7 +63,7 @@ function RateLimit.Class:remove(Player)
 	pcall(function() self._stored[Player] = nil  end)
 end
 
-function RateLimit.Class:New(...) return self:new(...) end
+function RateLimit:New(...) return self:new(...) end
 function RateLimit.Class:Add(...) return self:add(...) end
 function RateLimit.Class:Remove(...) return self:remove(...) end
 
